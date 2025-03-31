@@ -29,14 +29,14 @@ export function setupCanvas(element: HTMLDivElement){
         // create row
         const rowRef = document.createElement('div')
         rowRef.className = "flex flex-row justify-center items-center w-full cursor-pointer"
-        rowRef.style = `height:${1/size * 100}%;`
+        rowRef.setAttribute('style', `height:${1/size * 100}%;`)
         rowRef.id = `row${i}`
         // create each cell in row
         for (let j: number = 0; j < size; j++){
             // create cell
             const cellRef = document.createElement('div')
             cellRef.className = `cell h-full border select-none`
-            cellRef.style = `width:${1/size * 100}%;height:100%;`
+            cellRef.setAttribute('style', `width:${1/size * 100}%;height:100%;`)
             cellRef.id = `cell${i},${j}`
             // add onClick
             cellRef.addEventListener('mousedown', () => setColor(cellRef, true))
