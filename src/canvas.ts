@@ -35,7 +35,9 @@ export function setupCanvas(element: HTMLDivElement){
         for (let j: number = 0; j < size; j++){
             // create cell
             const cellRef = document.createElement('div')
-            cellRef.className = `cell h-full border select-none`
+            cellRef.className = `cell h-full select-none`
+            if (document.querySelector<HTMLDivElement>('#toggle-grid')?.innerText == 'y')
+              cellRef.className += ' border'
             cellRef.setAttribute('style', `width:${1/size * 100}%;height:100%;`)
             cellRef.id = `cell${i},${j}`
             // add onClick
